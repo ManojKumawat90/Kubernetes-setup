@@ -62,3 +62,32 @@ The script performs the following steps:
    ```bash
    chmod +x setup-master.sh
 
+Run the Script:
+
+./setup-master.sh
+
+Follow the Prompts:
+When prompted, enter the desired hostname or press Enter to use the default.
+
+Post-Script Steps:
+After the script completes:
+
+The Kubernetes master node will be initialized.
+The worker join command will be available in /root/join_command.sh.
+Ensure your DNS is properly configured if you plan to expose services externally.
+
+Troubleshooting
+APT Locks:
+The script waits for APT locks to be released and forcefully terminates any unattended-upgrade processes if necessary. If APT remains locked, check for active package management processes.
+
+Network Connectivity:
+Ensure that your system has proper network connectivity and that the required repositories are reachable.
+
+Kubeadm Initialization:
+If kubeadm init fails, review the error messages and verify that swap is disabled and sysctl settings are correctly applied.
+
+License
+This script is provided as-is without any warranty. Use at your own risk.
+
+Author
+Manoj Kumar Kumawat
